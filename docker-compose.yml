@@ -1,0 +1,18 @@
+services:
+  ssh-617.cyrhades.fr:
+    container_name: ssh-617
+    build:
+      context: ./.docker/ssh
+      args:
+        LANGUAGE: ${LANGUAGE:-fr}
+    labels:
+      ho.ctf.cyrhades: "challenge"
+      ho.ctf.cyrhades.webssh: "1"
+    environment:
+      SSH_HOSTNAME: "ssh-617.cyrhades.fr"
+      SSH_PORT: 22
+      SSH_USERNAME: "cyrhades"
+      SSH_PASSWORD: "secret"
+    restart: unless-stopped
+  fizz-buzz.cyrhades.fr:
+    image: anssi/fcsc2026-misc-fizz-buzz:latest
