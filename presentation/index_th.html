@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - CTF ของ Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ตรวจสอบว่าหน้าต่างอยู่ใน iframe หรือไม่
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // เปิดใช้งานการเน้นไวยากรณ์ (Syntax Highlighting):
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js ไม่ได้ถูกโหลด!");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>ความท้าทาย #617</h3>
+                            <h2 class="section-title">FizzBuzz (1/2)</h2>
+                            <p>
+โดยใช้เครื่องเสมือน (virtual machine) คุณจะต้องสร้างสตริงข้อความที่นับตามรูปแบบ FizzBuzz
+<br /><br />
+เอกสารประกอบสำหรับเครื่องเสมือนมีให้อ่านที่ <a href="https://hackropole.fr/fr/doc/vm2026/">หน้านี้</a>
+                            </p>
+                            <h4>ไฟล์ที่ต้องศึกษา:</h4>
+                            <ul>
+                                <li><a href="../files/fizz-buzz.py">fizz-buzz.py</a></li>
+                                <li><a href="../files/assembly.py">assembly.py</a></li>
+                                <li><a href="../files/crypto_accelerator.py">crypto_accelerator.py</a></li>
+                                <li><a href="../files/machine.py">machine.py</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                ลิงก์อย่างเป็นทางการ:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2026-misc-fizzbuzz-1/">https://hackropole.fr/fr/challenges/misc/fcsc2026-misc-fizzbuzz-1/</a>
+                                <br />
+                                ผู้เขียน: Neige
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>การเรียนรู้</h3>
+                            <h2 class="section-title">เอกสารและวิดีโอ</h2>
+                            <p class="section-subtitle">
+                                ยังไม่มีเอกสารในขณะนี้
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>ช่วยเหลือ</h3>
+                            <h2 class="section-title">คำแนะนำและคำใบ้</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">เธรดใน
+                                    Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="เลื่อนกลับไปด้านบน" title="กลับสู่ด้านบนสุดของเว็บไซต์"></a>
+    </div>
+</body>
+
+</html>

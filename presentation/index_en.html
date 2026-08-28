@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Cyrhades' CTFs</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Checks if the window is in an iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Enables syntax highlighting:
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js not loaded!");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #617</h3>
+                            <h2 class="section-title">FizzBuzz (1/2)</h2>
+                            <p>
+Using the virtual machine, you need to produce a string counting in FizzBuzz.
+<br /><br />
+The virtual machine documentation is available <a href="https://hackropole.fr/fr/doc/vm2026/">on this page</a>.
+                            </p>
+                            <h4>File(s) to study:</h4>
+                            <ul>
+                                <li><a href="../files/fizz-buzz.py">fizz-buzz.py</a></li>
+                                <li><a href="../files/assembly.py">assembly.py</a></li>
+                                <li><a href="../files/crypto_accelerator.py">crypto_accelerator.py</a></li>
+                                <li><a href="../files/machine.py">machine.py</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Official link:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2026-misc-fizzbuzz-1/">https://hackropole.fr/fr/challenges/misc/fcsc2026-misc-fizzbuzz-1/</a>
+                                <br />
+                                Author: Neige
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Learning</h3>
+                            <h2 class="section-title">Documentation and Videos</h2>
+                            <p class="section-subtitle">
+                                No documentation at the moment
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Help</h3>
+                            <h2 class="section-title">Tips and Clues</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Discord
+                                    thread</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Scroll to top" title="Scroll to top"></a>
+    </div>
+</body>
+
+</html>

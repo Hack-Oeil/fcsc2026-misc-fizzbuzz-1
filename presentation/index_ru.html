@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - CTF от Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Проверяет, находится ли окно во фрейме
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Включает подсветку синтаксиса:
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js не загружен!");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Челлендж #617</h3>
+                            <h2 class="section-title">FizzBuzz (1/2)</h2>
+                            <p>
+С помощью виртуальной машины необходимо сгенерировать строку, считающую в формате FizzBuzz.
+<br /><br />
+Документация по виртуальной машине доступна <a href="https://hackropole.fr/fr/doc/vm2026/">на этой странице</a>.
+                            </p>
+                            <h4>Файл(ы) для изучения:</h4>
+                            <ul>
+                                <li><a href="../files/fizz-buzz.py">fizz-buzz.py</a></li>
+                                <li><a href="../files/assembly.py">assembly.py</a></li>
+                                <li><a href="../files/crypto_accelerator.py">crypto_accelerator.py</a></li>
+                                <li><a href="../files/machine.py">machine.py</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Официальная ссылка:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/misc/fcsc2026-misc-fizzbuzz-1/">https://hackropole.fr/fr/challenges/misc/fcsc2026-misc-fizzbuzz-1/</a>
+                                <br />
+                                Автор: Neige
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Обучение</h3>
+                            <h2 class="section-title">Документация и видео</h2>
+                            <p class="section-subtitle">
+                                На данный момент документация отсутствует
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Помощь</h3>
+                            <h2 class="section-title">Советы и подсказки</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Ветка
+                                    в Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Вернуться наверх" title="Перейти к началу сайта"></a>
+    </div>
+</body>
+
+</html>
