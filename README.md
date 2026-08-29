@@ -1,4 +1,4 @@
-# FCSC 2025 FizzBuzz (1/2)
+# FCSC 2026 FizzBuzz (1/2)
 
 À l’aide de la machine virtuelle, il faut produire une chaîne de caractère comptant en FizzBuzz.
 
